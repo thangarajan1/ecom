@@ -1,0 +1,50 @@
+i:hover {
+  scale: 1.1;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.nav {
+  margin-left: 150px;
+}
+.navbar {
+  background-color: black;
+  
+}
+.nav-link{
+    color: white;
+}
+.navbar-brand{
+    margin-left: 50px;
+    color: white;
+}
+
+.row{
+    margin-top: 50px;
+}
+.card{
+    box-shadow: 0px 0px 10px black,0px 0px 15px white,0px 0px 20px black;
+}
+p{
+    font-weight: 500;
+    font-size: 17px;
+}
+h3{
+    font-weight: 700;
+}
+.search{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search input {
+  width: 25%;
+  padding: 8px;
+  border-radius: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
