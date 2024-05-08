@@ -154,7 +154,7 @@ background:"transparent",
                         value="Submit"
                         className="btn btn-primary w-100 mt-3"
                       />
-                      <Link to="/register"> Register Now ?</Link>
+                      <Link to="/"> Register Now ?</Link>
                     </div>
                   </form>
                 </div>

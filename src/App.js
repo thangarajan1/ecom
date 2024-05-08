@@ -1,22 +1,22 @@
-import './App.css';
-import Home from './Home';
-import Navbar from './Navbar';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
-import Birds from './Birds.jsx';
-import Animals from "./Animals.jsx"
-import Fishs from "./Fishs.jsx"
-import Foods from "./Foods.jsx"
-import Contact from "./Contact.jsx"
-import Login from './Login.jsx';
-import Register from './Register.jsx';
-import Card from './Card.jsx';
+import "./App.css";
+import Home from "./Home";
+import Navbar from "./Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Birds from "./Birds.jsx";
+import Animals from "./Animals.jsx";
+import Fishs from "./Fishs.jsx";
+import Foods from "./Foods.jsx";
+import Contact from "./Contact.jsx";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
+import Card from "./Card.jsx";
 import { useState, createContext, useEffect } from "react";
-import CardStore from './CardStore.jsx';
+import CardStore from "./CardStore.jsx";
 import axios from "axios";
-import DeleteItems from './DeleteItems.jsx';
+import DeleteItems from "./DeleteItems.jsx";
 // import HomeLog from "./HomeLog";
 
-export const cartContext = createContext()
+export const cartContext = createContext();
 
 function App() {
   const [cardItem, setCardItem] = useState([]); //Card Data
@@ -25,8 +25,7 @@ function App() {
   const [animal, setAnimal] = useState([]); //Animal
   const [fish, setFish] = useState([]); //Fish
   const [food, setFood] = useState([]); //Food
-const [checkReg,setCheckReg] = useState(true);
-
+  const [checkReg, setCheckReg] = useState(true);
 
   const [userData, setUserData] = useState({
     //Bird Data Uplod
@@ -134,30 +133,35 @@ const [checkReg,setCheckReg] = useState(true);
         setUserDataFood,
       }}
     >
-      {checkReg ?
-      <BrowserRouter>
-      <Register /> 
-      </BrowserRouter>
-      :
-      <BrowserRouter>
-        
-         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bird" element={<Birds />} />
-          <Route path="/animal" element={<Animals />} />
-          <Route path="/fish" element={<Fishs />} />
-          <Route path="/food" element={<Foods />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="" element={""} />
-          <Route path="/card" element={<Card />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/update" element={<CardStore />} />
-          <Route path="/delete" element={<DeleteItems />} />
-        </Routes>
-      </BrowserRouter>
-}
+      {checkReg ? (
+        <BrowserRouter>
+          {/* <Register /> */}
+
+          <Routes>
+            <Route path="/" element={<Register />} />
+
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      ) : (
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/bird" element={<Birds />} />
+            <Route path="/animal" element={<Animals />} />
+            <Route path="/fish" element={<Fishs />} />
+            <Route path="/food" element={<Foods />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="" element={""} />
+            <Route path="/card" element={<Card />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/update" element={<CardStore />} />
+            <Route path="/delete" element={<DeleteItems />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </cartContext.Provider>
   );
 }
